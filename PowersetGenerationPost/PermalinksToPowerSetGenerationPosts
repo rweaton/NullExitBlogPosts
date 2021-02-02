@@ -1,0 +1,27 @@
+Permalinks to posts
+
+https://nullexit.org/blog/index.php/2021/01/27/power-sets-in-python-an-object-oriented-approach-part-1/
+
+https://nullexit.org/blog/index.php/2021/01/27/power-sets-in-python-an-object-oriented-approach-part-2/
+
+https://nullexit.org/blog/index.php/2021/01/29/power-sets-in-python-an-object-oriented-approach-part-3/
+
+<html>
+<style>
+ol {
+  list-style-type: none;
+}
+</style>
+
+Python object-oriented power set generator
+
+Focus keyphrase:
+Power sets in python: an object-oriented approach (part 1)
+
+slug:
+power-sets-in-python-an-object-oriented-approach-part-1
+
+Meta description:
+How to build power sets in Python both iteratively and recursively. Use of object "containers" that permit sub-set membership in super-sets.
+
+
