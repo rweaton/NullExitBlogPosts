@@ -137,3 +137,24 @@ class ModSet():
             dummySet.pushDown(1)      # Nest empty set down one level so it can
             return dummySet           # be union joined in the recursion level
                                       # above that called this run-through.
+
+    def powerSet_mix(self):  # self.val is a set with reg. elements
+        
+        if len(self.val) > 0:  # if self.val is not empty do the following
+
+            el = list(self.val)[-1] # obtain last element of self.val set
+            el = ModSet(set([el])) # insert element within a ModSet
+            T = self.diffFunc(el) # get ModSet complement of self by set-subtracting el
+            pSet = T.powerSet_mix() # self-call to obtain power set of ModSet complement
+            # copy the power set of complement, need it kept unaltered from subsequent mods
+            extSet = ModSet(set([i.__copy__() for i in pSet.val])) # element-by-element copy
+            for s in extSet.val: # iterate through each subset in the power set of complement
+                s.union(el) # union-join the stripped element to each member subset
+            extSet.union(pSet) # union-join modified extSet to power set of complement
+            return extSet # return result which is power set of self
+        
+        else:  # if self.val is empty
+            dummySet = ModSet(set())  # construct ModSet of empty
+            dummySet.pushDown(1) # nest down 1 level
+            return dummySet # return power set (nested ModSet instance) that 
+                            # includes only singleton subset as member
